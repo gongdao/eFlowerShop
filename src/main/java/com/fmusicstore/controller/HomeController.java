@@ -3,6 +3,7 @@ package com.fmusicstore.controller;
 import com.fmusicstore.dao.ProductDao;
 import com.fmusicstore.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,7 +20,7 @@ import java.util.List;
 public class HomeController {
 
     @Autowired
-    private ProductDao productDao;
+    public ProductDao productDao;
 
     @RequestMapping("/")
     public String home(){
