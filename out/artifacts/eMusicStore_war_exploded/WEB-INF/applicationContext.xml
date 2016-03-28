@@ -22,7 +22,7 @@
         </property>
         <property name="packagesToScan">
             <list>
-                <value>com.fmusicstore</value>
+                <value>com.emusicstore</value>
             </list>
         </property>
     </bean>

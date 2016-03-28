@@ -1,7 +1,7 @@
-package com.fmusicstore.dao.impl;
+package com.emusicstore.dao.impl;
 
-import com.fmusicstore.dao.ProductDao;
-import com.fmusicstore.model.Product;
+import com.emusicstore.dao.ProductDao;
+import com.emusicstore.model.Product;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

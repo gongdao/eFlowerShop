@@ -1,6 +1,6 @@
-package com.fmusicstore.dao;
+package com.emusicstore.dao;
 
-import com.fmusicstore.model.Product;
+import com.emusicstore.model.Product;
 
 import java.util.List;
 

@@ -1,9 +1,8 @@
-package com.fmusicstore.model;
+package com.emusicstore.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 
 /**
  * Created by zhaobin on 3/27/2016.
@@ -11,8 +10,12 @@ import javax.persistence.Id;
 @Entity
 public class Product {
 
+    /*@Id
+    @GeneratedValue(strategy = GenerationType.AUTO)*/
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(generator = "uuid")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    //@Column(name = "PR_KEY")
     private String productId;
     private String productName;
     private String productCategory;
