@@ -1,8 +1,11 @@
 package com.emusicstore.model;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.validator.constraints.NotEmpty;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
 
 /**
  * Created by zhaobin on 3/27/2016.
@@ -17,14 +20,23 @@ public class Product {
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     //@Column(name = "PR_KEY")
     private String productId;
+
+    @NotEmpty(message = "Rhe product name must not be null.")
     private String productName;
     private String productCategory;
     private String productDescription;
+
+    @Min(value = 0, message = "The product price must not be less than zero.")
     private double productPrice;
     private String productCondition;
     private String productStatus;
+
+    @Min(value = 0, message = "The product unit must not be less than zero.")
     private int unitInStock;
     private String productManufacturer;
+
+    @Transient
+    private MultipartFile productImage;
 
     public String getProductId() {
         return productId;
@@ -96,6 +108,14 @@ public class Product {
 
     public void setProductManufacturer(String productManufacturer) {
         this.productManufacturer = productManufacturer;
+    }
+
+    public MultipartFile getProductImage() {
+        return productImage;
+    }
+
+    public void setProductImage(MultipartFile productImage) {
+        this.productImage = productImage;
     }
 }
 
