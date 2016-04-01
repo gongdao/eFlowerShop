@@ -9,7 +9,7 @@ cartApp.controller('cartCtrl',function ($scope, $http){
     };
 
     $scope.clearCart = function(){
-        $http.delete('/eMusicStore/rest/cart/'+$scope/cartId).success($scope.refreshCart($scope.cartId));
+        $http.delete('/eMusicStore/rest/cart/'+$scope.cartId).success($scope.refreshCart($scope.cartId));
     };
 
     $scope.initCartId = function(cartId){

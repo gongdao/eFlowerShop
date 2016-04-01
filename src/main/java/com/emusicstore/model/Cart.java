@@ -57,19 +57,24 @@ public class Cart {
             cartItems.put(productId, item);
         }
 
-        updateGrandTotal();
+        updateGrandTotal(1);
     }
 
     public void removeCartItem(CartItem item){
         String productId = item.getProduct().getProductId();
         cartItems.remove(productId);
-        updateGrandTotal();
+        updateGrandTotal(-1);
     }
 
-    public void updateGrandTotal(){
-        grandTotal = 0;
-        for (CartItem item : cartItems.values()){
-            grandTotal = grandTotal + item.getTotalPrice();
-        }
+    public void updateGrandTotal(int action){
+        //grandTotal = 0;
+        if (action == 1)
+            for (CartItem item : cartItems.values()){
+                grandTotal = grandTotal + item.getTotalPrice();
+            }
+        else if (action == -1)
+            for (CartItem item : cartItems.values()){
+                grandTotal = grandTotal - item.getTotalPrice();
+            }
     }
 }
