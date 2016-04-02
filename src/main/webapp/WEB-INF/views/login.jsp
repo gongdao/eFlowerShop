@@ -1,7 +1,7 @@
 <%@include file="/WEB-INF/views/template/header.jsp"%>
 
 <div class="container-wrapper">
-    <div class="container">
+    <div class="login-container">
         <div id="login-box">
             <h2>Login with Username and password</h2>
 
@@ -24,6 +24,7 @@
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 
                 <input type="submit" value="Submit" class="btn btn-default">
+
 
             </form>
         </div>

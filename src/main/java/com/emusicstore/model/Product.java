@@ -1,27 +1,34 @@
 package com.emusicstore.model;
 
-import org.hibernate.annotations.GenericGenerator;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.annotations.*;
+import org.hibernate.annotations.CascadeType;
 import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
+import javax.persistence.Entity;
 import javax.validation.constraints.Min;
+import java.io.Serializable;
+import java.util.List;
 
 /**
  * Created by zhaobin on 3/27/2016.
  */
 @Entity
-public class Product {
+public class Product implements Serializable {
 
-    /*@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)*/
+
+    private static final long serialVersionUID = -3532377236419382983L;
     @Id
+        @GeneratedValue(strategy = GenerationType.AUTO)
+    /*@Id
     @GeneratedValue(generator = "uuid")
-    @GenericGenerator(name = "uuid", strategy = "uuid2")
+    @GenericGenerator(name = "uuid", strategy = "uuid2")*/
     //@Column(name = "PR_KEY")
-    private String productId;
+    private int productId;
 
-    @NotEmpty(message = "Rhe product name must not be null.")
+    @NotEmpty(message = "The product name must not be null.")
     private String productName;
     private String productCategory;
     private String productDescription;
@@ -38,11 +45,15 @@ public class Product {
     @Transient
     private MultipartFile productImage;
 
-    public String getProductId() {
+    @OneToMany(mappedBy = "product", cascade = javax.persistence.CascadeType.ALL, fetch = FetchType.EAGER)
+    @JsonIgnore
+    private List<CartItem> cartItemList;
+
+    public int getProductId() {
         return productId;
     }
 
-    public void setProductId(String productId) {
+    public void setProductId(int productId) {
         this.productId = productId;
     }
 
@@ -114,8 +125,18 @@ public class Product {
         return productImage;
     }
 
+    public List<CartItem> getCartItemList() {
+        return cartItemList;
+    }
+
+    public void setCartItemList(List<CartItem> cartItemList) {
+        this.cartItemList = cartItemList;
+    }
+
     public void setProductImage(MultipartFile productImage) {
         this.productImage = productImage;
     }
+
+
 }
 
