@@ -35,7 +35,11 @@ public class Customer implements Serializable{
 
     @OneToOne
     @JoinColumn(name="billingAddressId")
-    private ShippingAddress billingAddress;
+    private BillingAddress billingAddress;
+
+    @OneToOne
+    @JoinColumn(name="shippingAddressId")
+    private ShippingAddress shippingAddress;
 
     @OneToOne
     @JoinColumn(name = "cartId")
@@ -99,12 +103,20 @@ public class Customer implements Serializable{
         this.enabled = enabled;
     }
 
-    public ShippingAddress getBillingAddress() {
+    public BillingAddress getBillingAddress() {
         return billingAddress;
     }
 
-    public void setBillingAddress(ShippingAddress billingAddress) {
+    public void setBillingAddress(BillingAddress billingAddress) {
         this.billingAddress = billingAddress;
+    }
+
+    public ShippingAddress getShippingAddress() {
+        return shippingAddress;
+    }
+
+    public void setShippingAddress(ShippingAddress shippingAddress) {
+        this.shippingAddress = shippingAddress;
     }
 
     public Cart getCart() {

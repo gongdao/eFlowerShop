@@ -8,7 +8,7 @@ import javax.persistence.Id;
  * Created by zhaobin on 4/1/2016.
  */
 @Entity
-public class users {
+public class Users {
     @Id
     @GeneratedValue
     private int userId;

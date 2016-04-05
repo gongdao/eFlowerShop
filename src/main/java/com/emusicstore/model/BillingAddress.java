@@ -20,7 +20,7 @@ public class BillingAddress implements Serializable{
     @Id
     @GeneratedValue
     private int billingAddressId;
-    private String stressName;
+    private String streetName;
     private String apartmentNumber;
     private String city;
     private String state;
@@ -39,12 +39,12 @@ public class BillingAddress implements Serializable{
         this.billingAddressId = billingAddressId;
     }
 
-    public String getStressName() {
-        return stressName;
+    public String getStreetName() {
+        return streetName;
     }
 
-    public void setStressName(String stressName) {
-        this.stressName = stressName;
+    public void setStreetName(String streetName) {
+        this.streetName = streetName;
     }
 
     public String getApartmentNumber() {
@@ -98,7 +98,7 @@ public class BillingAddress implements Serializable{
     @Override
     public String toString() {
         return "BillingAddress{" +
-                "stressName='" + stressName + '\'' +
+                "stressName='" + streetName + '\'' +
                 ", apartmentNumber='" + apartmentNumber + '\'' +
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +

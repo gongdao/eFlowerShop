@@ -17,7 +17,7 @@ public class ShippingAddress implements Serializable{
     @Id
     @GeneratedValue
     private int shippingAddressId;
-    private String stressName;
+    private String streetName;
     private String apartmentNumber;
     private String city;
     private String state;
@@ -36,12 +36,12 @@ public class ShippingAddress implements Serializable{
         this.shippingAddressId = shippingAddressId;
     }
 
-    public String getStressName() {
-        return stressName;
+    public String getStreetName() {
+        return streetName;
     }
 
-    public void setStressName(String stressName) {
-        this.stressName = stressName;
+    public void setStreetName(String streetName) {
+        this.streetName = streetName;
     }
 
     public String getApartmentNumber() {
@@ -96,7 +96,7 @@ public class ShippingAddress implements Serializable{
     @Override
     public String toString() {
         return "ShippingAddress{" +
-                "stressName='" + stressName + '\'' +
+                "stressName='" + streetName + '\'' +
                 ", apartmentNumber='" + apartmentNumber + '\'' +
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
