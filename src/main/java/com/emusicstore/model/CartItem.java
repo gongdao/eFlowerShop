@@ -26,7 +26,7 @@ public class CartItem implements Serializable{
     @JoinColumn(name="productId")
     private Product product;
 
-    private int queantity;
+    private int quantity;
     private double totalPrice;
 
     public int getCartItemId() {
@@ -53,12 +53,12 @@ public class CartItem implements Serializable{
         this.product = product;
     }
 
-    public int getQueantity() {
-        return queantity;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setQueantity(int queantity) {
-        this.queantity = queantity;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public double getTotalPrice() {
