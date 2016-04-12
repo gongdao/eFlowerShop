@@ -2,10 +2,10 @@
   <artifact type="exploded-war" name="eMusicStore:war exploded">
     <output-path>$PROJECT_DIR$/src/main/webapp</output-path>
     <root id="root">
-      <element id="javaee-facet-resources" facet="eMusicStore/web/Web" />
+      <element id="javaee-facet-resources" facet="eFlowerShop/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
-          <element id="module-output" name="eMusicStore" />
+          <element id="module-output" name="eFlowerShop" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Spring MVC-4.2.5.RELEASE" />

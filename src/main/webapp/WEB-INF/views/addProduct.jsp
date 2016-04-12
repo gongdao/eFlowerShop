@@ -5,8 +5,7 @@
 <div class="container-wrapper">
     <div class="container">
         <div class="page-header">
-            <h1>Add Product</h1>
-
+            <h2>Add Product</h2>
             <p class="lead">Fill the below information to add a product:</p>
         </div>
 

@@ -24,7 +24,7 @@
         </property>
         <property name="packagesToScan">
             <list>
-                <value>com.emusicstore</value>
+                <value>com.eflowershop</value>
             </list>
         </property>
     </bean>
