@@ -24,7 +24,7 @@ public class CustomerOrder implements Serializable{
     private Customer customer;
 
     @OneToOne
-    @JoinColumn(name="billingAddress")
+    @JoinColumn(name="billingAddressId")
     private BillingAddress billingAddress;
 
     @OneToOne

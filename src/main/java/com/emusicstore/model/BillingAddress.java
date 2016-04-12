@@ -25,7 +25,7 @@ public class BillingAddress implements Serializable{
     private String city;
     private String state;
     private String country;
-    private String zipcode;
+    private String zipCode;
 
     @OneToOne
     private Customer customer;
@@ -79,12 +79,12 @@ public class BillingAddress implements Serializable{
         this.country = country;
     }
 
-    public String getZipcode() {
-        return zipcode;
+    public String getZipCode() {
+        return zipCode;
     }
 
-    public void setZipcode(String zipcode) {
-        this.zipcode = zipcode;
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
     }
 
     public Customer getCustomer() {
@@ -98,12 +98,13 @@ public class BillingAddress implements Serializable{
     @Override
     public String toString() {
         return "BillingAddress{" +
-                "stressName='" + streetName + '\'' +
+                "streetName='" + streetName + '\'' +
                 ", apartmentNumber='" + apartmentNumber + '\'' +
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
                 ", country='" + country + '\'' +
-                ", zipcode='" + zipcode + '\'' +
+                ", zipCode='" + zipCode + '\'' +
+                ", customer=" + customer +
                 '}';
     }
 }

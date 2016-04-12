@@ -11,18 +11,18 @@ import javax.persistence.Id;
 public class Users {
     @Id
     @GeneratedValue
-    private int userId;
+    private int usersId;
     private String username;
     private String password;
     private boolean enabled;
     private int customerId;
 
     public int getUserId() {
-        return userId;
+        return usersId;
     }
 
     public void setUserId(int userId) {
-        this.userId = userId;
+        this.usersId = userId;
     }
 
     public String getUsername() {

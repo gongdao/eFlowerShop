@@ -22,7 +22,7 @@ public class ShippingAddress implements Serializable{
     private String city;
     private String state;
     private String country;
-    private String zipcode;
+    private String zipCode;
 
     @OneToOne
     private Customer customer;
@@ -76,12 +76,12 @@ public class ShippingAddress implements Serializable{
         this.country = country;
     }
 
-    public String getZipcode() {
-        return zipcode;
+    public String getZipCode() {
+        return zipCode;
     }
 
-    public void setZipcode(String zipcode) {
-        this.zipcode = zipcode;
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
     }
 
     public Customer getCustomer() {
@@ -92,16 +92,16 @@ public class ShippingAddress implements Serializable{
         this.customer = customer;
     }
 
-
     @Override
     public String toString() {
         return "ShippingAddress{" +
-                "stressName='" + streetName + '\'' +
+                "streetName='" + streetName + '\'' +
                 ", apartmentNumber='" + apartmentNumber + '\'' +
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
                 ", country='" + country + '\'' +
-                ", zipcode='" + zipcode + '\'' +
+                ", zipCode='" + zipCode + '\'' +
+                ", customer=" + customer +
                 '}';
     }
 }

@@ -11,32 +11,26 @@
     </ol>
     <div class="carousel-inner" role="listbox">
         <div class="item active">
-            <img class="first-slide home-image" src="<c:url value="/resources/images/back02.jpg"/>" alt="First slide">
+            <img class="first-slide home-image" src="<c:url value="/resources/images/back11.jpg"/>" alt="First slide">
             <div class="container">
                 <div class="carousel-caption">
-                    <h1>Welcome to Le's Music Store.</h1>
 
-                    <p>Here you can browse and buy Instruments, Records and music related Accessories. Order Now for
                 </div>
             </div>
         </div>
         <div class="item">
-            <img class="second-slide home-image" src="<c:url value="/resources/images/back03.jpg"/>" alt="Second slide">
+            <img class="second-slide home-image" src="<c:url value="/resources/images/back12.jpg"/>" alt="Second slide">
             <div class="container">
                 <div class="carousel-caption">
-                    <h1>Facts You Should Know About Music</h1>
 
-                    <p>Music brings joy, to all of our hearts, It's one of those, emotional arts.</p>
                 </div>
             </div>
         </div>
         <div class="item">
-            <img class="third-slide home-image" src="<c:url value="/resources/images/back04.jpg"/>" alt="Third slide">
+            <img class="third-slide home-image" src="<c:url value="/resources/images/back14.jpg"/>" alt="Third slide">
             <div class="container">
                 <div class="carousel-caption">
-                    <h1>It's A Jazz Affair</h1>
 
-                    <p>Through ups and downs, Somehow I manage to survive in life.</p>
                 </div>
             </div>
         </div>

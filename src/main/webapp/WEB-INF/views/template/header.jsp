@@ -15,13 +15,18 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="/resources/icons/favicon-huaMaoLiang.ico">
+    <link rel="icon" href="../../favicon.ico">
 
-    <title>eMusic Store</title>
+    <title>eFlower Store</title>
 
     <!-- Angular JS-->
-     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>-->
     <!--<script src="<c:url value="/resources/js/angular.min.js" /> "></script>-->
+    <%--Jquery--%>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <%--Data Table--%>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
 
     <!-- Bootstrap core CSS -->
     <link href="<c:url value="/resources/css/bootstrap.min.css" />" rel="stylesheet">
@@ -31,6 +36,9 @@
 
     <!-- customized CSS -->
     <link href="<c:url value="/resources/css/main.css" />" rel="stylesheet">
+
+    <link href="https://cdn.datatables.net/1.10.11/css/jquery.dataTables.min.css" rel="stylesheet">
+
 
 </head>
 <!-- NAVBAR
@@ -54,7 +62,7 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="<c:url value="/"/>">Home</a></li>
-                        <li><a href="<c:url value="/product/productList" />">Products</a></li>
+                        <li><a href="<c:url value="/product/productList/all" />">Products</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                     <ul class="nav navbar-nav pull-right">

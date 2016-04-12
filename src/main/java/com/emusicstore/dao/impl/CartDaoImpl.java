@@ -2,11 +2,15 @@ package com.emusicstore.dao.impl;
 
 import com.emusicstore.dao.CartDao;
 import com.emusicstore.model.Cart;
+import com.emusicstore.service.CustomerOrderService;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+import sun.plugin.viewer.IExplorerPluginObject;
+
+import java.io.IOException;
 
 /**
  * Created by zhaobin on 4/5/2016.
@@ -18,6 +22,9 @@ public class CartDaoImpl implements CartDao {
     @Autowired
     private SessionFactory sessionFactory;
 
+    @Autowired
+    private CustomerOrderService customerOrderService;
+
     public Cart getCartById (int cartId){
         Session session = sessionFactory.getCurrentSession();
         return (Cart) session.get(Cart.class,cartId);
@@ -25,7 +32,24 @@ public class CartDaoImpl implements CartDao {
 
     public void update(Cart cart){
         int cartId = cart.getCartId();
-        //to do later.
+        double grandtotal= customerOrderService.getCustomerOrderGrandTotal(cartId);
+        cart.setGrandTotal(grandtotal);
+
+        Session session = sessionFactory.getCurrentSession();
+        session.saveOrUpdate(cart);
+    }
+
+    public Cart validate(int cartId) throws IOException{
+        System.out.println("validating!!!!!");
+        Cart cart=getCartById(cartId);
+        if(cart==null||cart.getCartItems().size()==0){
+            System.out.println("exception!!!!");
+            throw new IOException(cartId+"");
+        }
+
+        update(cart);
+        System.out.println("validated___________");
+        return cart;
     }
 
 }

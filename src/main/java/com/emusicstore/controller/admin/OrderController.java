@@ -23,18 +23,20 @@ public class OrderController {
     private CustomerOrderService customerOrderService;
 
     @RequestMapping("/order/{cartId}")
-    public String createOrder(@PathVariable("cartId")int cartId){
+    public String createOrder(@PathVariable(value = "cartId")int cartId){
+
         CustomerOrder customerOrder = new CustomerOrder();
         Cart cart= cartService.getCartById(cartId);
         customerOrder.setCart(cart);
 
         Customer customer = cart.getCustomer();
         customerOrder.setCustomer(customer);
+        //System.out.println("customerId = "+ customer.getCustomerId());
         customerOrder.setBillingAddress(customer.getBillingAddress());
         customerOrder.setShipingAddress(customer.getShippingAddress());
 
         customerOrderService.addCustomerOrder(customerOrder);
 
-        return "redirect:/checkout?cartId"+ cartId;
+        return "redirect:/checkout?cartId="+cartId;
     }
 }
