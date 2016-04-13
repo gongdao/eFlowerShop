@@ -18,7 +18,7 @@ cartApp.controller('cartCtrl',function ($scope, $http){
     };
 
     $scope.addToCart = function(productId){
-        alert("Prepared to add product to the cart!")
+        //alert("Prepared to add product to the cart!")
         $http.put('/eFlowerShop/rest/cart/add/'+productId).success(function(){
             //$scope.refreshCart($http.get('/eFlowerShop/rest/cart/cartId'));
             alert("Product successfully added to the cart!")
