@@ -13,7 +13,7 @@
     $(document).ready(function() {
 
         $('.table').DataTable({
-            "lengthMenu" : [[1,3,5,10,-1], [1,3,5,10,"All"]]
+            "lengthMenu" : [[10,3,5,15,20,-1], [10,3,5,15,20,"All"]]
         });
     });
 </script>

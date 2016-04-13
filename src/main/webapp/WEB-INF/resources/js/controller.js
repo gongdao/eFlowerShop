@@ -3,13 +3,13 @@ var cartApp = angular.module('cartApp',[]);
 
 cartApp.controller('cartCtrl',function ($scope, $http){
     $scope.refreshCart = function (){
-        $http.get('/eMusicStore/rest/cart/'+$scope.cartId).success(function(data){
+        $http.get('/eFlowerShop/rest/cart/'+$scope.cartId).success(function(data){
             $scope.cart=data;
         });
     };
 
     $scope.clearCart = function(){
-        $http.delete('/eMusicStore/rest/cart/'+$scope.cartId).success($scope.refreshCart());
+        $http.delete('/eFlowerShop/rest/cart/'+$scope.cartId).success($scope.refreshCart());
     };
 
     $scope.initCartId = function(cartId){
@@ -18,15 +18,15 @@ cartApp.controller('cartCtrl',function ($scope, $http){
     };
 
     $scope.addToCart = function(productId){
-        //alert("Prepared to add product to the cart!")
-        $http.put('/eMusicStore/rest/cart/add/'+productId).success(function(){
-            //$scope.refreshCart($http.get('/eMusicStore/rest/cart/cartId'));
+        alert("Prepared to add product to the cart!")
+        $http.put('/eFlowerShop/rest/cart/add/'+productId).success(function(){
+            //$scope.refreshCart($http.get('/eFlowerShop/rest/cart/cartId'));
             alert("Product successfully added to the cart!")
         });
     };
 
     $scope.removeFromCart = function(productId){
-        $http.put('/eMusicStore/rest/cart/remove/'+productId).success(function(data){
+        $http.put('/eFlowerShop/rest/cart/remove/'+productId).success(function(data){
             $scope.refreshCart();
         });
     };

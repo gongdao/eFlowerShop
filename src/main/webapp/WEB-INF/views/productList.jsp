@@ -6,7 +6,7 @@
     $(document).ready(function() {
         var searchCondition = '${searchCondition}';
 
-        $('#pages').DataTable({
+        $('.table').DataTable({
             "lengthMenu" : [[10,2,3,5,15,20,-1], [10,2,3,5,15,20,"All"]],
             "oSearch" : {"sSearch" : searchCondition}
         });

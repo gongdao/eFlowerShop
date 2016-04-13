@@ -44,10 +44,10 @@
                     </tr>
                 </table>
 
-                <a href="<spring:url value="/product/productList" />" class="btn btn-default">Continue Shopping</a>
+                <a href="<spring:url value="/product/productList/all" />" class="btn btn-default">Continue Shopping</a>
             </div>
         </section>
     </div>
 </div>
-<script src="<c:url value="/resources/js/controller.js" /> "></script>
+<script src="<c:url value="/resources/js/controller.js" />"></script>
 <%@include file="/WEB-INF/views/template/footer.jsp"%>

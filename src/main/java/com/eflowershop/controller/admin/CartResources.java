@@ -47,10 +47,13 @@ public class CartResources {
     @ResponseStatus(value= HttpStatus.NO_CONTENT)
     public void addItem(@PathVariable(value = "productId") int productId, @AuthenticationPrincipal User activeUser){
 
+        System.out.println("11111111");
         Customer customer = customerService.getCustomerByUsername(activeUser.getUsername());
         Cart cart = customer.getCart();
         Product product = productService.getProductById(productId);
         List<CartItem> cartItems = cart.getCartItems();
+
+        System.out.println("22222222");
 
         for(int i=0; i<cartItems.size(); i++){
             if(product.getProductId()==cartItems.get(i).getProduct().getProductId()){
@@ -61,14 +64,14 @@ public class CartResources {
                 return;
             }
         }
-
+        System.out.println("33333333");
         CartItem cartItem = new CartItem();
         cartItem.setProduct(product);
         cartItem.setQuantity(1);
         cartItem.setTotalPrice(product.getProductPrice()*cartItem.getQuantity());
         cartItem.setCart(cart);
         cartItemService.addCartItem(cartItem);
-
+        System.out.println("444444444");
     }
 
     @RequestMapping(value = "/remove/{productId}",method = RequestMethod.PUT)
